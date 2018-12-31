@@ -24,10 +24,8 @@ export class RegisterComponent implements OnInit {
   model: any;
   constructor(
     private authService: AuthService,
-    private router: Router
-  ) // private alertify: AlertifyService,
-  // private fb: FormBuilder
-  {
+    private router: Router // private alertify: AlertifyService, // private fb: FormBuilder
+  ) {
     this.model = {};
   }
 
