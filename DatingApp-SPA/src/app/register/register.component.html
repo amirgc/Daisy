@@ -1,8 +1,4 @@
-<form
-  #loginForm="ngForm"
-  class=""
-  (ngSubmit)="register()"
->
+<form #loginForm="ngForm" class="" (ngSubmit)="register()">
   <h2 class="text-center text-primary">Sign Up</h2>
   <hr />
   <div class="form-group">
@@ -34,12 +30,7 @@
     >
       Login
     </button>
-    <button
-      [disabled]="!loginForm.valid"
-      class="btn btn-default "
-      type="button"
-      (click)="cancel()"
-    >
+    <button class="btn btn-default " type="button" (click)="cancel()">
       Cancel
     </button>
   </div>

@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { BehaviorSubject } from "rxjs";
 import { map } from "rxjs/operators";
-// import { JwtHelperService } from "@auth0/angular-jwt";
+import { JwtHelperService } from "@auth0/angular-jwt";
 import { environment } from "../../environments/environment";
 // import { User } from "../_models/user";
 
@@ -11,7 +11,7 @@ import { environment } from "../../environments/environment";
 })
 export class AuthService {
   baseUrl = "http://localhost:5000/api/" + "auth/";
-  //   jwtHelper = new JwtHelperService();
+  jwtHelper = new JwtHelperService();
   decodedToken: any;
   // currentUser: User;
   photoUrl = new BehaviorSubject<string>("../../assets/user.png");
@@ -30,7 +30,7 @@ export class AuthService {
         if (user) {
           localStorage.setItem("token", user.token);
           localStorage.setItem("user", JSON.stringify(user.user));
-          // this.decodedToken = this.jwtHelper.decodeToken(user.token);
+           this.decodedToken = this.jwtHelper.decodeToken(user.token);
           // this.currentUser = user.user;
           // this.changeMemberPhoto(this.currentUser.photoUrl);
         }
@@ -44,7 +44,7 @@ export class AuthService {
 
   loggedIn() {
     const token = localStorage.getItem("token");
-    // return !this.jwtHelper.isTokenExpired(token);
+    return !this.jwtHelper.isTokenExpired(token);
   }
 
   roleMatch(allowedRoles): boolean {
