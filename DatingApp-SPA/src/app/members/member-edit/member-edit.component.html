@@ -13,7 +13,7 @@
       <div class="card">
         <img
           class="card-img-top img-thumbnail"
-          src="{{ photoUrl }}"
+          src="{{ photoUrl || '../../../assets/user.png' }}"
           alt="{{ user.knownAs }}"
         />
         <div class="card-body">
@@ -45,7 +45,6 @@
         </div>
       </div>
     </div>
-    <!--  -->
     <div class="col-sm-8">
       <div class="tab-panel">
         <tabset class="member-tabset">
@@ -81,7 +80,7 @@
                   name="city"
                   [(ngModel)]="user.city"
                 />
-                <label for="country">Country</label>
+                <label for="country">City</label>
                 <input
                   type="text"
                   class="form-control"
