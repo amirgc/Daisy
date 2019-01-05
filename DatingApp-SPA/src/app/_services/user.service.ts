@@ -3,7 +3,7 @@ import { environment } from "../../environments/environment";
 import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { User } from "../_models/user";
-// import { PaginatedResult } from '../_models/pagination';
+import { PaginatedResult } from "../_models/pagination";
 import { map } from "rxjs/operators";
 // import { Message } from '../_models/message';
 
@@ -14,46 +14,52 @@ export class UserService {
   baseUrl = environment.apiUrl;
   constructor(private http: HttpClient) {}
 
-  // page?, itemsPerPage?, userParams?, likesParam?
-  // Observable<PaginatedResult<User[]>> {
-  //   const paginatedResult: PaginatedResult<User[]> = new PaginatedResult<User[]>();
-  getUsers() {
-    // let params = new HttpParams();
+  getUsers(
+    page?,
+    itemsPerPage?,
+    userParams?,
+    likesParam?
+  ): Observable<PaginatedResult<User[]>> {
+    const paginatedResult: PaginatedResult<User[]> = new PaginatedResult<
+      User[]
+    >();
 
-    // if (page != null && itemsPerPage != null) {
-    //   params = params.append('pageNumber', page);
-    //   params = params.append('pageSize', itemsPerPage);
-    // }
+    let params = new HttpParams();
 
-    // if (userParams != null) {
-    //   params = params.append('minAge', userParams.minAge);
-    //   params = params.append('maxAge', userParams.maxAge);
-    //   params = params.append('gender', userParams.gender);
-    //   params = params.append('orderBy', userParams.orderBy);
-    // }
+    if (page != null && itemsPerPage != null) {
+      params = params.append("pageNumber", page);
+      params = params.append("pageSize", itemsPerPage);
+    }
 
-    // if (likesParam === 'Likers') {
-    //   params = params.append('Likers', 'true');
-    // }
+    if (userParams != null) {
+      params = params.append("minAge", userParams.minAge);
+      params = params.append("maxAge", userParams.maxAge);
+      params = params.append("gender", userParams.gender);
+      params = params.append("orderBy", userParams.orderBy);
+    }
 
-    // if (likesParam === 'Likees') {
-    //   params = params.append('Likees', 'true');
-    // }
+    if (likesParam === "Likers") {
+      params = params.append("Likers", "true");
+    }
 
-    return this.http.get<User[]>(this.baseUrl + "Users");
-    // .pipe(
-    //   map(response => {
-    //     paginatedResult.result = response.body;
-    //     if (response.headers.get("Pagination") != null) {
-    //       paginatedResult.pagination = JSON.parse(
-    //         response.headers.get("Pagination")
-    //       );
-    //     }
-    //     return paginatedResult;
-    //   })
-    // );
+    if (likesParam === "Likees") {
+      params = params.append("Likees", "true");
+    }
+
+    return this.http
+      .get<User[]>(this.baseUrl + "users", { observe: "response", params })
+      .pipe(
+        map(response => {
+          paginatedResult.result = response.body;
+          if (response.headers.get("Pagination") != null) {
+            paginatedResult.pagination = JSON.parse(
+              response.headers.get("Pagination")
+            );
+          }
+          return paginatedResult;
+        })
+      );
   }
-
   getUser(id): Observable<User> {
     return this.http.get<User>(this.baseUrl + "users/" + id);
   }

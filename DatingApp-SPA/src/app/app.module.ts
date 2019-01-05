@@ -8,10 +8,17 @@ import { NavComponent } from "./nav/nav.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { JwtModule } from "@auth0/angular-jwt";
 import { NgxGalleryModule } from "ngx-gallery";
+import { TimeAgoPipe } from "time-ago-pipe";
 
 import { HomeComponent } from "./home/home.component";
 import { RegisterComponent } from "./register/register.component";
-import { BsDropdownModule, TabsModule, BsDatepickerModule } from "ngx-bootstrap";
+import {
+  BsDropdownModule,
+  TabsModule,
+  BsDatepickerModule,
+  PaginationModule,
+  ButtonsModule
+} from "ngx-bootstrap";
 import { RouterModule } from "@angular/router";
 import { appRoutes } from "./routes";
 
@@ -49,7 +56,8 @@ export function tokenGetter() {
     MemberCardComponent,
     MemberDetailComponent,
     MemberEditComponent,
-    PhotoEditorComponent
+    PhotoEditorComponent,
+    TimeAgoPipe
   ],
   imports: [
     BrowserModule,
@@ -59,8 +67,10 @@ export function tokenGetter() {
     ReactiveFormsModule,
     BsDropdownModule.forRoot(),
     BsDatepickerModule.forRoot(),
+    ButtonsModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     TabsModule.forRoot(),
+    PaginationModule.forRoot(),
     NgxGalleryModule,
     FileUploadModule,
     JwtModule.forRoot({
