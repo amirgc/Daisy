@@ -1,8 +1,12 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-primary">
   <div class="container">
-    <a class="navbar-brand" [routerLink]="['/home']">Dating App</a>
+    <a
+      class="navbar-brand  col-sm-12 col-md-4 col-lg-4 col-xl-2"
+      [routerLink]="['/home']"
+      >TimroMeroDate</a
+    >
 
-    <ul *ngIf="loggedIn()" class="navbar-nav mr-auto">
+    <ul *ngIf="loggedIn()" class="navbar-nav mr-auto col-sm-12 col-md-4 col-lg-4 col-xl-4">
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" [routerLink]="['/members']">Matches</a>
       </li>
@@ -21,7 +25,11 @@
       </li> -->
     </ul>
 
-    <div *ngIf="loggedIn()" class="dropdown" dropdown>
+    <div
+      *ngIf="loggedIn()"
+      class="dropdown  col-sm-12 col-md-4 col-lg-4 col-xl-4"
+      dropdown
+    >
       <span class="mr-1">
         <img src="{{ photoUrl || '../../assets/user.png' }}" alt="" />
       </span>
