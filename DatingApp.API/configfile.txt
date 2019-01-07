@@ -1,0 +1,1 @@
+ "DefaultConnection": "Server=DESKTOP-HQ7HQGI\\AMIR;Database=DatingApp;User ID=sa;Password=sew@s0ft;"

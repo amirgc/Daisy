@@ -23,6 +23,8 @@ namespace DatingApp.API.Data
         {
             // if (!_userManager.Users.Any())
             // {
+            if (!_context.Users.Any())
+            {
                 var userData = System.IO.File.ReadAllText("Data/UserSeedData.json");
                 var users = JsonConvert.DeserializeObject<List<User>>(userData);
 
@@ -54,19 +56,20 @@ namespace DatingApp.API.Data
                     _context.Users.Add(user);
 
                 }
-                _context.SaveChanges();
-                // var adminUser = new User
-                // {
-                //     UserName = "Admin"
-                // };
+            }
+            _context.SaveChanges();
+            // var adminUser = new User
+            // {
+            //     UserName = "Admin"
+            // };
 
-                // IdentityResult result = _userManager.CreateAsync(adminUser, "password").Result;
+            // IdentityResult result = _userManager.CreateAsync(adminUser, "password").Result;
 
-                // if (result.Succeeded)
-                // {
-                //     var admin = _userManager.FindByNameAsync("Admin").Result;
-                //     _userManager.AddToRolesAsync(admin, new[] {"Admin", "Moderator"}).Wait();
-                // }
+            // if (result.Succeeded)
+            // {
+            //     var admin = _userManager.FindByNameAsync("Admin").Result;
+            //     _userManager.AddToRolesAsync(admin, new[] {"Admin", "Moderator"}).Wait();
+            // }
             //}
         }
 

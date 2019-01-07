@@ -37,7 +37,7 @@ namespace DatingApp.Api
         public void ConfigureDevelopmentServices(IServiceCollection services)
         {
             System.Console.WriteLine("development called");
-            services.AddDbContext<DataContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
+            services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnection"))
             .ConfigureWarnings(warning => warning.Ignore(CoreEventId.IncludeIgnoredWarning)));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
              .AddJsonOptions(opt =>
@@ -70,7 +70,7 @@ namespace DatingApp.Api
         {
             System.Console.WriteLine("productioin called");
 
-            services.AddDbContext<DataContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<DataContext>(x => x.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
              .AddJsonOptions(opt =>
                 {
