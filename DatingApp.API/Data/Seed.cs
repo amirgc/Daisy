@@ -23,8 +23,10 @@ namespace DatingApp.API.Data
         {
             // if (!_userManager.Users.Any())
             // {
+                 System.Console.WriteLine("user create outside");
             if (!_context.Users.Any())
             {
+                System.Console.WriteLine("user create");
                 var userData = System.IO.File.ReadAllText("Data/UserSeedData.json");
                 var users = JsonConvert.DeserializeObject<List<User>>(userData);
 

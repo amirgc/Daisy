@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DatingApp.Api.Migrations
 {
-    public partial class freshdatabase : Migration
+    public partial class newFresh : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

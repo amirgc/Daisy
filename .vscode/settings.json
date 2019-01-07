@@ -2,8 +2,8 @@
     "deploy": {
       "packages": [
         {
-          "name": "Version 1.2",
-          "description": "Dating App Version 1.2",
+          "name": "Version 1.5",
+          "description": "Dating App Version 1.5",
           "files": ["DatingApp.API/bin/Debug/netcoreapp2.2/publish/**"]
         }
       ],
