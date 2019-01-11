@@ -1,1 +1,3 @@
  "DefaultConnection": "Server=DESKTOP-HQ7HQGI\\AMIR;Database=DatingApp;User ID=sa;Password=sew@s0ft;"
+ Data source=DatingApp.db
+ "Server=localhost; Database=datingApp; Uid=appuser; Pwd=password"
