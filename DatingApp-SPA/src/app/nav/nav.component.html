@@ -6,7 +6,10 @@
       >TimroMeroDate</a
     >
 
-    <ul *ngIf="loggedIn()" class="navbar-nav mr-auto col-sm-12 col-md-4 col-lg-4 col-xl-4">
+    <ul
+      *ngIf="loggedIn()"
+      class="navbar-nav mr-auto col-sm-12 col-md-4 col-lg-4 col-xl-4"
+    >
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" [routerLink]="['/members']">Matches</a>
       </li>
@@ -16,13 +19,13 @@
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" [routerLink]="['/messages']">Messages</a>
       </li>
-      <!-- <li
+      <li
         *appHasRole="['Admin', 'Moderator']"
         class="nav-item"
         routerLinkActive="active"
       >
         <a class="nav-link" [routerLink]="['/admin']">Admin</a>
-      </li> -->
+      </li>
     </ul>
 
     <div
