@@ -421,9 +421,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-@angular/router
-MIT
-
 ngx-bootstrap/utils
 
 ngx-bootstrap/positioning
@@ -468,6 +465,11 @@ ngx-bootstrap/mini-ngrx
 MIT
 
 ngx-bootstrap/datepicker
+
+@angular/router
+MIT
+
+ngx-bootstrap/modal
 
 ngx-bootstrap/buttons
 
