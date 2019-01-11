@@ -49,7 +49,7 @@ namespace DatingApp.API.Data
                     UserName = "Admin"
                 };
 
-                IdentityResult result = _userManager.CreateAsync(adminUser, "password").Result;
+                IdentityResult result = _userManager.CreateAsync(adminUser, "d@t!ng@@p").Result;
 
                 if (result.Succeeded)
                 {
