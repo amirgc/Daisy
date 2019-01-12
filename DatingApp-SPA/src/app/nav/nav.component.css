@@ -2,9 +2,14 @@
     cursor: pointer;
 }
 
-img {
+.user-img {
     max-height: 40px;
     border: 2px solid white;
     display: inline;
     border-radius: 50%;
+}
+
+.logo
+{
+    width: 200px;
 }
