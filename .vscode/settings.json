@@ -2,8 +2,8 @@
     "deploy": {
       "packages": [
         {
-          "name": "Version 1.5",
-          "description": "Dating App Version 1.5",
+          "name": "Version 1.1",
+          "description": "Dating App Version 1.1",
           "files": ["DatingApp.API/bin/Debug/netcoreapp2.2/publish/**"]
         }
       ],
@@ -19,10 +19,10 @@
               "target": "/"
             }
           ],
-          "host": "139.59.88.176",
+          "host": "142.93.209.20",
           "port": 22,
           "user": "root",
-          "password": "bl@st6365",
+          "password": "@m!r",
           "checkBeforeDeploy": true
         }
       ]
