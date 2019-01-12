@@ -1,8 +1,8 @@
 .backgroud {
   background-image: url("./../../assets/coverphoto.jpg");
-  height: 700px;
+  min-height: 600px;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat:repeat-y;
   background-size: cover;
   color: #fff;
 }
@@ -14,10 +14,16 @@
   );
 }
 
-
 .splashdtf-top-text-manifesto {
   padding: 10px;
   width: 460px;
   font-size: 20px;
   line-height: 30px;
+}
+.splashdtf-right-text-manifesto {
+  padding: 10px;
+  width: 460px;
+  font-size: 20px;
+  line-height: 30px;
+  margin-left: 600px;
 }

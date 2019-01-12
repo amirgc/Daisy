@@ -2,21 +2,22 @@
   <div class="container">
     <div *ngIf="!registerMode" style="text-align: center">
       <div class="cover-description pt-5">
-        <h1>Find your match</h1>
-        <p class="lead">
-          Come on in to view your matches... All you need to do is
-          <span style="font-size:2em"><b>sign up!</b></span>
-        </p>
-        <div class="text-center">
-          <button
-            class="btn btn-primary btn-lg mr-2"
-            (click)="registerToggle()"
-          >
-            Register Now
-          </button>
-          <button class="btn btn-info btn-lg">Learn more</button>
+        <div *ngIf="!authService.loggedIn()">
+          <h1>Find your match</h1>
+          <p class="lead">
+            Come on in to view your matches... All you need to do is
+            <span style="font-size:2em"><b>sign up!</b></span>
+          </p>
+          <div class="text-center">
+            <button
+              class="btn btn-primary btn-lg mr-2"
+              (click)="registerToggle()"
+            >
+              Register Now
+            </button>
+            <button class="btn btn-info btn-lg">Learn more</button>
+          </div>
         </div>
-
         <div>
           <div class="splashdtf-top-text-manifesto">
             <h1><span>You Deserves Better</span></h1>
@@ -29,6 +30,7 @@
                 deserves: better.</span
               >
             </p>
+            <h1><span>Best Matches For You</span></h1>
             <p>
               <span>
                 Our Matching System Filters For You. You'll Be Surprised Who
@@ -38,17 +40,28 @@
                 Dating, Senior Dating, Local Dating.
               </span>
             </p>
+            <div *ngIf="authService.loggedIn()">
+              <a [routerLink]="['/members']" routerLinkActive="router-link-active" 
+                ><button class="btn btn-info btn-lg">
+                  Start Looking Your Soul Mate Now
+                </button></a
+              >
+            </div>
+          </div>
+          <div class="splashdtf-right-text-manifesto">
+            <h1><span>Nepal First Dating Website</span></h1>
+            <p><span></span></p>
           </div>
         </div>
       </div>
-    </div>
 
-    <div *ngIf="registerMode" class="container">
-      <div class="row justify-content-center">
-        <div class="col-4">
-          <app-register
-            (cancelRegister)="cancelRegisterMode($event)"
-          ></app-register>
+      <div *ngIf="registerMode" class="container">
+        <div class="row justify-content-center">
+          <div class="col-4">
+            <app-register
+              (cancelRegister)="cancelRegisterMode($event)"
+            ></app-register>
+          </div>
         </div>
       </div>
     </div>
