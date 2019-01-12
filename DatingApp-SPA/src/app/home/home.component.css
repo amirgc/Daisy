@@ -1,0 +1,23 @@
+.backgroud {
+  background-image: url("./../../assets/coverphoto.jpg");
+  height: 700px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+.cover-description {
+  background-image: linear-gradient(
+    to left,
+    rgba(255, 0, 0, 0.1),
+    rgb(233, 84, 32, 0.5)
+  );
+}
+
+
+.splashdtf-top-text-manifesto {
+  padding: 10px;
+  width: 460px;
+  font-size: 20px;
+  line-height: 30px;
+}
