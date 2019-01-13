@@ -1,0 +1,10 @@
+.top-message {
+  text-align: center;
+  text-decoration: underline;
+  font-size: 19pt;
+  background-image: linear-gradient(
+    to left,
+    rgba(255, 0, 0, 0.1),
+    rgb(233, 84, 32, 0.3)
+  );
+}

@@ -47,6 +47,7 @@ import { PhotoManagementComponent } from "./admin/photo-management/photo-managem
 import { AdminService } from "./_services/admin.service";
 import { RolesModalComponent } from "./admin/roles-modal/roles-modal.component";
 import { FooterComponent } from "./footer/footer.component";
+import { NotificationsComponent } from "./notifications/notifications.component";
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -72,7 +73,8 @@ export function tokenGetter() {
     UserManagementComponent,
     PhotoManagementComponent,
     RolesModalComponent,
-    FooterComponent
+    FooterComponent,
+    NotificationsComponent
   ],
   imports: [
     BrowserModule,
