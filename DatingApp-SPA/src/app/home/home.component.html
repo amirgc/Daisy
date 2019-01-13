@@ -35,13 +35,14 @@
               <span>
                 Our Matching System Filters For You. You'll Be Surprised Who
                 You'll Find on timromerodate.com! Love That Lasts. Start Dating
-                Today! Find True Compatibility. Meet Local Singles. Types:
-                Online Dating, Christian Dating, Black Dating, Professional
-                Dating, Senior Dating, Local Dating.
+                Today! Find True Compatibility. Meet Local Singles. Get to know
+                singles from your locals who are perfect for you.
               </span>
             </p>
             <div *ngIf="authService.loggedIn()">
-              <a [routerLink]="['/members']" routerLinkActive="router-link-active" 
+              <a
+                [routerLink]="['/members']"
+                routerLinkActive="router-link-active"
                 ><button class="btn btn-info btn-lg">
                   Start Looking Your Soul Mate Now
                 </button></a
