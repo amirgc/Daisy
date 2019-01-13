@@ -41,6 +41,7 @@ namespace DatingApp.API.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register(UserForRegisterDto userForRegisterDto)
         {
+            userForRegisterDto.Username = userForRegisterDto.Username.Trim();
             var userToCreate = _mapper.Map<User>(userForRegisterDto);
 
             var result = await _userManager.CreateAsync(userToCreate, userForRegisterDto.Password);
@@ -49,7 +50,7 @@ namespace DatingApp.API.Controllers
 
             if (result.Succeeded)
             {
-                return CreatedAtRoute("GetUser", 
+                return CreatedAtRoute("GetUser",
                     new { controller = "Users", id = userToCreate.Id }, userToReturn);
             }
 

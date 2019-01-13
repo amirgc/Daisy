@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { BehaviorSubject } from "rxjs";
+import { BehaviorSubject, Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { JwtHelperService } from "@auth0/angular-jwt";
 import { environment } from "../../environments/environment";
@@ -40,6 +40,10 @@ export class AuthService {
 
   register(user) {
     return this.http.post(this.baseUrl + "register", user);
+  }
+
+  getCountries(): Observable<any> {
+    return this.http.get("https://restcountries.eu/rest/v2/all");
   }
 
   loggedIn() {

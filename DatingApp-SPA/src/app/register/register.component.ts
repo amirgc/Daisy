@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
   user: User;
   registerForm: FormGroup;
   bsConfig: Partial<BsDatepickerConfig>;
-
+  countries: any;
   model: any;
   constructor(
     private authService: AuthService,
@@ -32,11 +32,16 @@ export class RegisterComponent implements OnInit {
     private fb: FormBuilder
   ) {
     this.model = {};
+    //
+    this.authService.getCountries().subscribe(data => {
+      console.log(data);
+      this.countries = data;
+    });
   }
 
   ngOnInit() {
     this.bsConfig = {
-      containerClass: 'theme-red'
+      containerClass: "theme-red"
     };
     this.createRegisterForm();
   }
@@ -49,7 +54,7 @@ export class RegisterComponent implements OnInit {
         knownAs: ["", Validators.required],
         dateOfBirth: [null, Validators.required],
         city: ["", Validators.required],
-        country: ["", Validators.required],
+        country: ["Select Country"],
         password: [
           "",
           [
